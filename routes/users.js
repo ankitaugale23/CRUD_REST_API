@@ -19,5 +19,13 @@ router.post("/", (req,res) => {    //adds user to the users array
 
 })
 
+router.get("/:id", (req,res) => {
+    const {id} = req.params;      //taking id from req.params.id in 'const id'
+    const foundUser = users.find((user) => user.id === id ) 
+    
+    res.send(foundUser)
+   
+})
+
 
 export default router;
