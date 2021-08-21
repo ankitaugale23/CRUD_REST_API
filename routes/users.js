@@ -21,5 +21,12 @@ router.get('/',(req,res)=>    //functionality for '/users' route (default / mean
     res.send(users)
 });
 
+router.post("/", (req,res) => {    //adds user to the users array
+    const user = req.body;
+    users.push(user);
+    res.send(`User with name ${user.firstName} successfully added`);   
+
+})
+
 
 export default router;
