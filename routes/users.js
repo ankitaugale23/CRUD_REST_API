@@ -3,7 +3,7 @@ import {v4 as uuidv4 } from 'uuid';
 
 const router = express.Router();
 
-const users = []
+let users = []
 
 router.get('/',(req,res)=>    //functionality for '/users' route (default / means /users here).
 {
@@ -25,6 +25,12 @@ router.get("/:id", (req,res) => {
     
     res.send(foundUser)
    
+})
+
+router.delete("/:id",(req,res) => {
+    const {id} = req.params;
+    users = users.filter((user) => user.id !== id)    //if true keep the user in filtered data
+    res.send(users);
 })
 
 
