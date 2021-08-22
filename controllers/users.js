@@ -35,5 +35,5 @@ export const updateUser = (req,res)=> {     //handle partial updation request
     if(firstName) user.firstName = firstName;
     if(lastName)  user.lastName  = lastName;
     if(age)       user.age = age;
-    res.send(`some information of user with ${id} has been changed `)
+    res.send(`some information of user with ${id} and with name ${firstName} has been changed `)
 }
